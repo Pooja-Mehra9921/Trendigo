@@ -1,5 +1,6 @@
 import React from "react";
-import ReactImageMagnify from "react-image-magnify";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 
 // import Hooks
 import { useDispatch, useSelector } from "react-redux";
@@ -101,28 +102,10 @@ const SingleProductDetail = () => {
           </Box>
           <Box className="image-magnify-sec">
             <Box className="magnify-image">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: "Wristwatch by Ted Baker London",
-                    isFluidWidth: true,
-                    src: imageToMagnify,
-                  },
-                  largeImage: {
-                    src: imageToMagnify,
-                    width: 1000,
-                    height: 1000,
-                  },
-                  enlargedImageContainerStyle: {
-                    zIndex: "1500",
-                  },
-                  enlargedImageContainerDimensions: {
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "#000000",
-                  },
-                }}
-              />
+            <InnerImageZoom
+    src={dataFromStore?.thumbnail}
+    zoomSrc="https://via.placeholder.com/1000"
+  />
             </Box>
             <Box className="btn-container">
               <Button
