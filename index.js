@@ -14,7 +14,6 @@ import BackdropLoader from "./src/component/BackdropLoader";
 
 // import styles
 import { ThemeProvider } from "@mui/material/styles";
-import Header from "./src/component/Header";
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
