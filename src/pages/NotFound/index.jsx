@@ -1,4 +1,5 @@
-import { Box } from "@mui/system";
+import Box from "@mui/material/Box";
+
 import React from "react";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
@@ -9,6 +10,7 @@ import "./style.css";
 const PageNotFound =()=>{
     return(
         <>
+        
         <Box>
 <img className="notfoundimage" src={IMAGE_NOT_FOUND} alt="image not found" />
         </Box>
