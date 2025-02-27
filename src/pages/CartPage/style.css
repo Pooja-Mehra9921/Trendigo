@@ -1,0 +1,63 @@
+
+.cart-title{
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addcart-container {
+  gap: 10px;
+  width: 80%;
+  margin: 1% auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+}
+
+.cart-product-section {
+  height: 65vh;
+  overflow: auto;
+  overflow-x: hidden;
+  margin: 10px auto;
+}
+.add-product-section {
+  width: 100%;
+  padding: auto 10px;
+  margin: auto 40px;
+}
+
+
+.address-section{
+  margin-top: 0px !important;
+}
+.user-pincode {
+  padding: 10px;
+  display: flex;
+  background-color: rgb(71, 71, 71);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.Billing-section {
+  width: 550px;
+  padding: 10px;
+  height: 270px;
+  margin-right:60px;
+  border: 1px solid white;
+  border-radius: 20px;
+ 
+}
+
+.add-to-cart-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: grey;
+  margin: 10px auto;
+}
+
+.address-section{
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+.whislist-page-container{
+    width: 50%;
+    margin:  1% auto;
+    padding: 20px;
+    height: 70vh;
+    overflow: hidden;
+    overflow-y: visible;
+}

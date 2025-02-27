@@ -1,0 +1,93 @@
+.main-grid-container {
+
+  height: auto;
+  width: 250px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 15px auto;
+  border: 1px solid white;
+  z-index: 1;
+
+
+}
+
+.main-grid-container:hover {
+  box-shadow: 0px 0px 10px rgb(180, 180, 180);
+  z-index: 1;
+
+}
+
+.heart-icon {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  cursor: pointer;
+  margin: 0px 20px;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+}
+
+
+
+.card-description {
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin: 5px 15px !important;
+  line-height: 18px !important;
+  letter-spacing: normal !important;
+  font-size: 12px !important;
+}
+
+.grid-title {
+  text-align: justify;
+
+  margin: auto 15px !important;
+  margin-top: 10px !important;
+  text-align: left !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+}
+
+.btn-container {
+  margin-top: 5px;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 20px;
+}
+
+.grid-orignal-price {
+  font-weight: 800;
+}
+
+.product-price {
+  text-decoration: line-through;
+}
+
+.grid-discout {
+  color: green;
+}
+
+.add-to-cart-btn {
+  width: 185px !important;
+  font-size: 14px !important;
+}
+
+.buynow-btn {
+  width: 130px !important;
+}

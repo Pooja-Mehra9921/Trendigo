@@ -1,0 +1,40 @@
+.Product-suggestion-main-container{
+    margin: 10px 70px;
+    padding: 15px;
+}
+
+
+
+.Product-suggestion-card{
+    height: 250px;
+    width: 250px !important; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border: 1px solid rgb(207, 206, 206);
+    padding: 4px;
+    border-radius: 10px;
+   
+}
+
+.Product-suggestion-card:hover{
+    box-shadow: 0px 0px 3px rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.Product-suggestion-images{
+    max-height: 170px;
+    max-width:  170px;
+}
+
+.Product-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.suggestion-title{
+    text-align: center;
+
+}

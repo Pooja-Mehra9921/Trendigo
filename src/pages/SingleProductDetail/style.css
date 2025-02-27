@@ -1,0 +1,62 @@
+.pro-detail-container {
+  margin: 1% 10%;
+  display: flex;
+}
+
+.pro-image-section {
+  width: 500px;
+  display: flex;
+}
+
+.image-suggestions {
+  width: 300px !important;
+  height: 300px !important;
+  flex-wrap: wrap;
+}
+
+.img-suggestion {
+  height: 100px !important;
+  width: 100px !important;
+  border: 1px solid grey;
+}
+
+.magnify-image {
+  border: 1px solid grey;
+}
+
+/* detail section*/
+
+.pro-detail-section {
+  padding: 10px 20px;
+}
+
+.selected-price {
+  font-weight: 400 !important;
+  font-size: 30px !important;
+}
+
+.selected-orignal-price {
+  color: grey;
+  text-decoration: line-through;
+  margin: auto 10px !important;
+}
+
+.selected-discount-price {
+  color: #388e3c;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+/* review-rating-section */
+
+.review-rating-section {
+  border: 1px solid rgb(221, 221, 221);
+  margin: 20px auto;
+  padding: 10px;
+}

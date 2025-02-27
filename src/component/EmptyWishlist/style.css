@@ -1,0 +1,23 @@
+.empty-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyimage{
+    height: 200px;
+    margin: 60px auto;
+}
+
+.empty-btn-container{
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+.continue-shopping-btn{
+    background-color: white !important;
+    color: black !important;
+    width: 300px !important;
+    height: 50px;
+}

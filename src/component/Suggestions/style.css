@@ -1,0 +1,35 @@
+.suggestion-main-container {
+  margin: 40px 20px;
+  padding: 15px;
+}
+
+.suggestion-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.suggestion-card {
+  height: 130px;
+  width: 120px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.suggestion-images {
+  height: 70px;
+  width: 70px;
+  border: 2px solid rgb(193, 193, 193);
+  padding: 10px;
+}
+
+.suggestion-images:hover{
+ transform: scale(1.2);
+ transition: 0.10;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

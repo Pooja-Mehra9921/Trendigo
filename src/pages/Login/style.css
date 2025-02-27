@@ -1,0 +1,124 @@
+.login-body {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container .login-paper {
+  height: 450px !important;
+  width: 700px;
+  background-color: #3f3f3f;
+  border: 1px solid white;
+  box-shadow: 0px 0px 12px white;
+}
+
+.textfield {
+  margin-bottom: 10px !important;
+}
+.flipkart-login-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.fk-left-sec {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+}
+
+.fk-right-sec {
+  padding: 16px;
+}
+
+.btn-container {
+  margin: 10px auto !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip-btn {
+  cursor: pointer !important;
+  width: 500px;
+  background-color: white !important;
+  color: black !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  height: 40px !important;
+  border-radius: 20px !important;
+}
+
+.display-flex-pro {
+  display: flex !important;
+  text-align: center !important;
+  justify-content: center;
+  color: white;
+  margin: 20px auto !important;
+}
+
+.chip-btn:hover {
+  box-shadow: 0px 0px 10px #ffffff;
+}
+
+.textfield input {
+  color: white !important;
+}
+
+.textfield label {
+  color: white !important;
+}
+
+.textfield .MuiOutlinedInput-root {
+  border-color: white !important;
+}
+
+.textfield .MuiOutlinedInput-root:hover fieldset {
+  border-color: lightgray !important;
+}
+
+.textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: white !important;
+}
+
+.textfield .MuiOutlinedInput-input {
+  padding: 4px 10px;
+  margin: 9px 10px;
+}
+
+@media screen and (max-width: 901px) {
+  .login-container .login-paper {
+    height: 450px !important;
+    width: 400px;
+    background-color: #3f3f3f;
+    border: 1px solid white;
+    box-shadow: 0px 0px 12px white;
+  }
+
+  .flipkart-login-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    border-radius: 5px;
+    opacity: 0.4;
+    z-index: 0;
+  }
+
+  .fk-left-sec {
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 0 !important;
+  }
+
+  .fk-right-sec {
+    padding: 16px;
+    z-index: 3;
+  }
+}

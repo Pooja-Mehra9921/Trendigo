@@ -1,0 +1,65 @@
+.main-add-to-cart-container{
+    background-color: rgb(54, 54, 54);
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.add-to-cart-product {
+    display: flex;
+    margin: 10px auto;
+}
+
+.add-to-cart-product:hover {
+    cursor: pointer;
+}
+
+.add-to-cart-image {
+    height: 170px;
+}
+
+.add-to-cart-deatil {
+    width: 100%;
+}
+
+.add-to-cart-image-sec,
+.add-to-cart-deatil {
+    padding: 10px;
+}
+
+.title-shipping {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+}
+
+.quent-btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.textfiled input {
+    color: white !important;
+  }
+  
+  .textfiled label {
+    color: white !important;
+  }
+  
+  .textfiled .MuiOutlinedInput-root {
+    border-color: white !important;
+  }
+  
+  .textfiled .MuiOutlinedInput-root:hover fieldset {
+    border-color: lightgray !important;
+  }
+  .textfiled .MuiOutlinedInput-root fieldset {
+    border-color: lightgray !important;
+  }
+  
+  .textfiled .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: white !important;
+  }
+  

@@ -1,0 +1,14 @@
+.user-name {
+    display: flex;
+    align-items: center;
+}
+
+.review-name-section {
+    margin: auto 10px;
+}
+
+.review-paper {
+    padding: 10px;
+    margin: 10px auto;
+    background-color: grey;
+}

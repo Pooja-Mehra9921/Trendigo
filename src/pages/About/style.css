@@ -1,0 +1,36 @@
+.abt-main{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-main-container{
+    margin: 2% auto;
+    width: 80%;
+    padding: 30px;
+}
+
+
+.objective-container{
+    background-color: rgb(105, 105, 105);
+    color: white;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.second-container{
+    width: 80%;
+    margin: 4% auto;
+    padding: 30px;
+
+}
+
+
+
+.about-image-conatiner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
