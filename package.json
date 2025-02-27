@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.js"
+    "start": "parcel ./index.js"
   },
   "keywords": [
     "learning",
@@ -21,8 +21,8 @@
     "@mui/material": "^6.4.1",
     "@reduxjs/toolkit": "^2.5.1",
     "axios": "^1.7.9",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+   "react": "^18.2.0",
+"react-dom": "^18.2.0",
     "react-inner-image-zoom": "^3.0.2",
     "react-redux": "^9.2.0",
     "react-responsive-carousel": "^3.2.23",
