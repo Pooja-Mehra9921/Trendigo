@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import { setupListeners } from "@reduxjs/toolkit/query";
-import flipKartClone from "./appReducer/appReducer"
+import trendigo from "./appReducer/appReducer"
 import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
@@ -12,7 +12,7 @@ const persistConfig = {
   stateReconciler: autoMergeLevel2,
 };
 
-const persistedReducer = persistReducer(persistConfig, flipKartClone);
+const persistedReducer = persistReducer(persistConfig, trendigo);
 
 export const store = configureStore({
   reducer: {

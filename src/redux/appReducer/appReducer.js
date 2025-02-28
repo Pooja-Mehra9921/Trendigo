@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const flipKartClone = createSlice({
+const trendigo = createSlice({
   name: "productCartManagement",
   initialState: {
     userData: {},
