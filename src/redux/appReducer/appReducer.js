@@ -52,6 +52,6 @@ export const {
   setCartItems,
   setWishListItems,
   setAddUserAddress,
-} = flipKartClone.actions;
+} = trendigo.actions;
 
-export default flipKartClone.reducer;
+export default trendigo.reducer;
