@@ -133,22 +133,71 @@ font-size: 14px;
   justify-content: center;
 }
 
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .search-container {
+  @media (min-width: 1920px) {
+    .header-main-container {
+      background-color: #0e1d55;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       width: 100%;
+      padding: 25px 0;
+      position: sticky;
+      top: 0;
+      z-index: 30;
     }
   
-    .menu-container {
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto;
       flex-wrap: wrap;
     }
-  
-    .add-to-cart {
-      margin-top: 10px;
+
+    .trendigo-image-style {
+      height: 30px;
+      width: 50px;
     }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 300px;
+      max-width: 100%;
+      margin: auto 10px;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      border: 1px solid grey;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #ffffff;
+      width: 100%;
+      margin: auto 10px !important;
+  
+    }
+    .menu-container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: auto 5px;
+    }
+
+    .header-cart-item-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto 5px;
+    }
+
+    .logout-btn{
+      margin: auto 10px !important;
+      color: white !important;
+      border: 1px solid white !important;
+    }
+    
   }
+
   

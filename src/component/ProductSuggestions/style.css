@@ -38,3 +38,22 @@
     text-align: center;
 
 }
+
+
+@media (max-width:1920px){
+    .slider{
+        width: 100%;
+    }
+    .Product-suggestion-card{
+        height: 250px;
+        width: 250px !important; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border: 1px solid rgb(207, 206, 206);
+        padding: 4px;
+        border-radius: 10px;
+       
+    }
+}

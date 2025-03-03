@@ -932,22 +932,70 @@
   display: flex;
 }
 
-@media (width <= 768px) {
+@media (width >= 1920px) {
+  .header-main-container {
+    z-index: 30;
+    background-color: #0e1d55;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 25px 0;
+    display: flex;
+    position: sticky;
+    top: 0;
+  }
+
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    display: flex;
+  }
+
+  .trendigo-image-style {
+    width: 50px;
+    height: 30px;
   }
 
   .search-container {
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    max-width: 100%;
+    margin: auto 10px;
+    display: flex;
+  }
+
+  .search-bar {
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 5px;
+    align-items: center;
     width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    margin: auto 10px !important;
   }
 
   .menu-container {
     flex-wrap: wrap;
+    align-items: center;
+    margin: auto 5px;
+    display: flex;
   }
 
-  .add-to-cart {
-    margin-top: 10px;
+  .header-cart-item-container {
+    justify-content: center;
+    align-items: center;
+    margin: auto 5px;
+    display: flex;
+  }
+
+  .logout-btn {
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    margin: auto 10px !important;
   }
 }
 
@@ -1296,6 +1344,24 @@
   text-align: center;
 }
 
+@media (width <= 1920px) {
+  .slider {
+    width: 100%;
+  }
+
+  .Product-suggestion-card {
+    border: 1px solid #cfcece;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    margin: 10px;
+    padding: 4px;
+    display: flex;
+    width: 250px !important;
+  }
+}
+
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
   -o-transition: all .25s ease-in;
   opacity: .4;
@@ -1572,6 +1638,12 @@
 
 .banner-image {
   height: 800px;
+}
+
+@media (width >= 1920px) {
+  .banner-image {
+    height: 700px;
+  }
 }
 
 .login-body {
@@ -1911,127 +1983,6 @@
 
 .notfoundimage {
   height: 350px;
-}
-
-.iiz {
-  max-width: 100%;
-  cursor: -webkit-zoom-in;
-  cursor: zoom-in;
-  margin: 0;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.iiz--drag .iiz__zoom-img--visible {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.iiz__img {
-  pointer-events: none;
-  visibility: visible;
-  opacity: 1;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.iiz__img--hidden {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.iiz__img--abs {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.iiz__zoom-img {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  display: block;
-  position: absolute;
-  width: auto !important;
-  max-width: none !important;
-}
-
-.iiz__zoom-img--visible {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  cursor: -webkit-zoom-out;
-  cursor: zoom-out;
-  -ms-touch-action: none;
-  touch-action: none;
-}
-
-.iiz__zoom-portal {
-  z-index: 10000;
-  position: fixed;
-  inset: 0;
-}
-
-.iiz__btn {
-  appearance: none;
-  background: #fffc;
-  border: none;
-  outline: none;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  text-decoration: none;
-  display: flex;
-  position: absolute;
-}
-
-.iiz__btn:before {
-  content: " ";
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-}
-
-.iiz__hint {
-  pointer-events: none;
-  bottom: 10px;
-  right: 10px;
-}
-
-.iiz__hint:before {
-  content: " ";
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 19.9 19.9'%3E%3Cpath d='M13.9 7.4C13.9 3.8 11 .9 7.4.9S.9 3.8.9 7.4s2.9 6.5 6.5 6.5 6.5-2.9 6.5-6.5zm5.3 12.5l-6.7-7.2c-1.4 1.3-3.2 2.1-5.1 2.1-4.1 0-7.4-3.3-7.4-7.4S3.3 0 7.4 0s7.4 3.3 7.4 7.4c0 1.7-.6 3.4-1.7 4.7l6.8 7.2-.7.6z' fill='%23000222'/%3E%3C/svg%3E");
-  width: 20px;
-  height: 20px;
-}
-
-.iiz__close {
-  visibility: hidden;
-  opacity: 0;
-  top: 10px;
-  right: 10px;
-}
-
-.iiz__close--visible {
-  visibility: visible;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.iiz__close:before {
-  content: " ";
-  background-image: linear-gradient(#222, #222), linear-gradient(#222, #222);
-  background-size: 100% 1px, 1px 100%;
-  width: 29px;
-  height: 29px;
-  transform: rotate(45deg);
 }
 
 .user-name {

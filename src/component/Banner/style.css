@@ -1,3 +1,11 @@
 .banner-image{
    height: 800px;
 }
+
+@media (min-width: 1920px){
+   .banner-image{
+      height: 700px;
+   }
+
+}
+   

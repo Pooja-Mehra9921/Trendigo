@@ -27,7 +27,7 @@ const ProductSuggestions = ({ title = "abc", product = [] }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
   };
 
@@ -67,7 +67,7 @@ setLoading(true);
               No Product Available
             </Typography>
           ) : 
-            <Slider {...settings}>
+            <Slider className="slider" {...settings}>
             {product.map((item, index) => (
               <Box
                 key={index}
