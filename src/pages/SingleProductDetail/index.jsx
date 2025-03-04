@@ -1,5 +1,6 @@
 import React from "react";
-import ReactImageMagnify from 'react-image-magnify';
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 
 // import Hooks
 import { useDispatch, useSelector } from "react-redux";
@@ -100,18 +101,12 @@ const SingleProductDetail = () => {
           </Box>
           <Box className="image-magnify-sec">
             <Box className="magnify-image">
-            <ReactImageMagnify {...{
-    smallImage: {
-        alt: "product image",
-        isFluidWidth: true,
-        src: {imageToMagnify}
-    },
-    largeImage: {
-        src: {imageToMagnify},
-        width: 1200,
-        height: 1800
-    }
-}} />
+            <InnerImageZoom 
+        src={imageToMagnify} 
+        zoomSrc="https://via.placeholder.com/1200"
+        zoomType="hover"
+        zoomScale={1.5}
+      />
             </Box>
             <Box className="btn-container">
               <Button
