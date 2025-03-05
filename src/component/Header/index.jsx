@@ -100,7 +100,7 @@ const Header = () => {
           ))}
 
           {/* Quick Search Dropdown */}
-          <Button sx={{ color: "white", width: "130px" }} onClick={handleQuickSearch}>
+          <Button className="quick-search-button" sx={{ color: "white", width: "130px" }} onClick={handleQuickSearch}>
             Quick Search
           </Button>
 
