@@ -33,3 +33,41 @@
   align-items: center;
   justify-content: center;
 }
+
+
+@media screen and (max-width: 393px) {
+  .suggestion-main-container {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .suggestion-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .suggestion-card {
+    height: 100px;
+    width: 100px;
+    margin: 10px 5px;
+    cursor: pointer;
+  }
+  
+  .suggestion-images {
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgb(193, 193, 193);
+    padding: 10px;
+  }
+  .suggestion-images:hover{
+    transform: none;
+    transition: none;
+   }
+
+   .suggestion-title{
+    font-size: 12px !important;
+   }
+}
