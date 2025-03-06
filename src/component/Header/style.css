@@ -191,5 +191,11 @@ width: 100%;
   width: 100%;
   padding: 10px 0;
 }
+
+  
+.menu-container {
+  display: none;
+
+}
 }
   

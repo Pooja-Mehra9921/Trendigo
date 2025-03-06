@@ -18,14 +18,10 @@ import {
   Fade,
   ListItemIcon,
 } from "@mui/material";
-import MenuItem from "@mui/material/MenuItem";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 // MUI Icons
 import {
   Logout,
-  Settings,
-  PersonAdd,
   Favorite as FavoriteIcon,
   Search as SearchIcon,
   Countertops as CountertopsIcon,
@@ -34,6 +30,7 @@ import {
   LibraryBooks as LibraryBooksIcon,
   LaptopChromebook as LaptopChromebookIcon,
 } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 // Assets & Helpers
 import MAIN_LOGO from "../../assents/logos/main-logo.png";
@@ -49,14 +46,14 @@ const Header = () => {
   const userData = JSON.parse(localStorage.getItem("userdata")) || {};
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const [anchorElForMenus, setAnchorElForMenus] = useState(null);
   const [quickSearchAnchor, setQuickSearchAnchor] = useState(null);
+  const [menusAnchor, setMenusAnchor] = useState(null);
   const [search, setSearch] = useState("");
 
   const isOpen = Boolean(anchorEl);
-  const isMenuOpen = Boolean(anchorElForMenus);
   const isQuickSearchOpen = Boolean(quickSearchAnchor);
   const isUserLoggedIn = Boolean(userData?.refreshToken);
+  const isMenuOpen = Boolean(menusAnchor);
 
   /**
    * Redirect to pages
@@ -89,20 +86,23 @@ const Header = () => {
   const handleSearchInputChange = (event) => setSearch(event.target.value);
   const handleSearchSubmit = () => navigate(`/product/${search}`);
 
-  const options = ["home", "product", "About", "Contact"];
-
-  const ITEM_HEIGHT = 48;
-  const handlemenupages = (event) => {
-    setAnchorElForMenus(event.currentTarget);
+  /** handle menu click */
+  const handleMenuClick = (event) => {
+    console.log("menu click");
+    setMenusAnchor(event.currentTarget);
   };
 
-  const handlemenupagescloses = () => setAnchorElForMenus(null);
-  const handleMenuItemClick = (type) => {
-    navigate(`/${type}${type === "product" ? "/all" : ""}`);
-
-    setAnchorElForMenus(null);
+  const handleMenuClose = () => {
+    setMenusAnchor(null);
   };
 
+  const handleMenuRedirectToPage=(type)=>{
+    console.log("page-----", type);
+    window.location.href = `/${type}${type === "product" ? "/all" : ""}`;
+    setMenusAnchor(null);
+
+
+  }
   return (
     <Box className="header-main-container">
       <Box className="header-container">
@@ -120,45 +120,35 @@ const Header = () => {
             Trendigo
           </Typography>
           <Box className="menu-icon-container">
-            <div>
-              <IconButton
-                aria-label="more"
-                id="long-button"
-                aria-controls={isMenuOpen ? "long-menu" : undefined}
-                aria-expanded={isMenuOpen ? "true" : undefined}
-                aria-haspopup="true"
-                onClick={handlemenupages}
-              >
-                <MoreVertIcon />
-              </IconButton>
-              <Menu
-                id="long-menu"
-                MenuListProps={{
-                  "aria-labelledby": "long-button",
-                }}
-                anchorEl={anchorElForMenus}
-                open={isMenuOpen}
-                onClose={handlemenupagescloses}
-                slotProps={{
-                  paper: {
-                    style: {
-                      maxHeight: ITEM_HEIGHT * 4.5,
-                      width: "20ch",
-                    },
-                  },
-                }}
-              >
-                {options.map((option) => (
-                  <MenuItem
-                    key={option}
-                    selected={option === "home"}
-                    onClick={() => handleMenuItemClick(option)}
-                  >
-                    {option.charAt(0).toUpperCase() + option.slice(1)}
-                  </MenuItem>
-                ))}
-              </Menu>
-            </div>
+            <IconButton
+              aria-label="more"
+              id="long-button"
+              aria-controls={isMenuOpen ? "long-menu" : undefined}
+              aria-expanded={isMenuOpen ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleMenuClick}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        anchorEl={menusAnchor}
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem onClick={() => handleMenuRedirectToPage("home")}>Home</MenuItem>
+        <MenuItem onClick={() => handleMenuRedirectToPage("product")}>Product</MenuItem>
+        <MenuItem onClick={() => handleMenuRedirectToPage("about")}>About</MenuItem>
+      </Menu>
           </Box>
         </Box>
 
