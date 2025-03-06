@@ -2,10 +2,13 @@
    height: 800px;
 }
 
-@media (min-width: 1920px){
+@media screen and (max-width: 393px) {
    .banner-image{
-      height: 700px;
+      height: 170px;
    }
 
+   .carousel-container{
+      margin: 10px;
+   }
 }
    

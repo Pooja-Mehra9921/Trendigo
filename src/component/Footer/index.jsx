@@ -17,18 +17,18 @@ const Footer = () => {
       <Box className="Footer-main-container">
         <Box className="footer-container">
           <Typography variant="body1" className="menus">
-            <StorefrontIcon />
+            <StorefrontIcon className="footer-icon" />
             Become a Seller
           </Typography>
           <Typography variant="body1" className="menus">
-            <AutoGraphIcon />
+            <AutoGraphIcon className="footer-icon" />
             Advertise
           </Typography>
           <Typography variant="body1" className="menus">
-            <RedeemIcon /> Gift Cards
+            <RedeemIcon className="footer-icon" /> Gift Cards
           </Typography>
           <Typography variant="body1" className="menus">
-            <HelpOutlineIcon />
+            <HelpOutlineIcon className="footer-icon" />
             Help Center
           </Typography>
         </Box>
