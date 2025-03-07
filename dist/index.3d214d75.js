@@ -104893,6 +104893,8 @@ var _reactRedux = require("react-redux");
 var _material = require("@mui/material");
 // MUI Icons
 var _iconsMaterial = require("@mui/icons-material");
+var _menu = require("@mui/icons-material/Menu");
+var _menuDefault = parcelHelpers.interopDefault(_menu);
 // Assets & Helpers
 var _mainLogoPng = require("../../assents/logos/main-logo.png");
 var _mainLogoPngDefault = parcelHelpers.interopDefault(_mainLogoPng);
@@ -104908,10 +104910,12 @@ const Header = ()=>{
     const userData = JSON.parse(localStorage.getItem("userdata")) || {};
     const [anchorEl, setAnchorEl] = (0, _react.useState)(null);
     const [quickSearchAnchor, setQuickSearchAnchor] = (0, _react.useState)(null);
+    const [menusAnchor, setMenusAnchor] = (0, _react.useState)(null);
     const [search, setSearch] = (0, _react.useState)("");
     const isOpen = Boolean(anchorEl);
     const isQuickSearchOpen = Boolean(quickSearchAnchor);
     const isUserLoggedIn = Boolean(userData?.refreshToken);
+    const isMenuOpen = Boolean(menusAnchor);
     /**
    * Redirect to pages
    */ const handleRedirectPages = (type)=>navigate(`/${type}${type === "product" ? "/all" : ""}`);
@@ -104932,6 +104936,18 @@ const Header = ()=>{
    * Search Handlers
    */ const handleSearchInputChange = (event)=>setSearch(event.target.value);
     const handleSearchSubmit = ()=>navigate(`/product/${search}`);
+    /** handle menu click */ const handleMenuClick = (event)=>{
+        console.log("menu click");
+        setMenusAnchor(event.currentTarget);
+    };
+    const handleMenuClose = ()=>{
+        setMenusAnchor(null);
+    };
+    const handleMenuRedirectToPage = (type)=>{
+        console.log("page-----", type);
+        window.location.href = `/${type}${type === "product" ? "/all" : ""}`;
+        setMenusAnchor(null);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
         className: "header-main-container",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
@@ -104947,7 +104963,7 @@ const Header = ()=>{
                             alt: "Trendigo Logo"
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 90,
+                            lineNumber: 114,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Typography), {
@@ -104958,13 +104974,84 @@ const Header = ()=>{
                             children: "Trendigo"
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 91,
+                            lineNumber: 119,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
+                            className: "menu-icon-container",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.IconButton), {
+                                    "aria-label": "more",
+                                    id: "long-button",
+                                    "aria-controls": isMenuOpen ? "long-menu" : undefined,
+                                    "aria-expanded": isMenuOpen ? "true" : undefined,
+                                    "aria-haspopup": "true",
+                                    onClick: handleMenuClick,
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _menuDefault.default), {}, void 0, false, {
+                                        fileName: "src/component/Header/index.jsx",
+                                        lineNumber: 131,
+                                        columnNumber: 15
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/component/Header/index.jsx",
+                                    lineNumber: 123,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Menu), {
+                                    id: "demo-positioned-menu",
+                                    "aria-labelledby": "demo-positioned-button",
+                                    anchorEl: menusAnchor,
+                                    open: isMenuOpen,
+                                    onClose: handleMenuClose,
+                                    anchorOrigin: {
+                                        vertical: 'top',
+                                        horizontal: 'left'
+                                    },
+                                    transformOrigin: {
+                                        vertical: 'top',
+                                        horizontal: 'left'
+                                    },
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.MenuItem), {
+                                            onClick: ()=>handleMenuRedirectToPage("home"),
+                                            children: "Home"
+                                        }, void 0, false, {
+                                            fileName: "src/component/Header/index.jsx",
+                                            lineNumber: 148,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.MenuItem), {
+                                            onClick: ()=>handleMenuRedirectToPage("product"),
+                                            children: "Product"
+                                        }, void 0, false, {
+                                            fileName: "src/component/Header/index.jsx",
+                                            lineNumber: 149,
+                                            columnNumber: 9
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.MenuItem), {
+                                            onClick: ()=>handleMenuRedirectToPage("about"),
+                                            children: "About"
+                                        }, void 0, false, {
+                                            fileName: "src/component/Header/index.jsx",
+                                            lineNumber: 150,
+                                            columnNumber: 9
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/component/Header/index.jsx",
+                                    lineNumber: 133,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/component/Header/index.jsx",
+                            lineNumber: 122,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header/index.jsx",
-                    lineNumber: 89,
+                    lineNumber: 110,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
@@ -104982,7 +105069,7 @@ const Header = ()=>{
                                 children: item.charAt(0).toUpperCase() + item.slice(1)
                             }, item, false, {
                                 fileName: "src/component/Header/index.jsx",
-                                lineNumber: 97,
+                                lineNumber: 158,
                                 columnNumber: 13
                             }, undefined)),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Button), {
@@ -104995,7 +105082,7 @@ const Header = ()=>{
                             children: "Quick Search"
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 103,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Menu), {
@@ -105010,8 +105097,8 @@ const Header = ()=>{
                                         fontSize: "small"
                                     }, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 109,
-                                        columnNumber: 40
+                                        lineNumber: 186,
+                                        columnNumber: 23
                                     }, undefined),
                                     type: "laptops"
                                 },
@@ -105021,8 +105108,8 @@ const Header = ()=>{
                                         fontSize: "small"
                                     }, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 110,
-                                        columnNumber: 40
+                                        lineNumber: 191,
+                                        columnNumber: 23
                                     }, undefined),
                                     type: "smartphones"
                                 },
@@ -105032,8 +105119,8 @@ const Header = ()=>{
                                         fontSize: "small"
                                     }, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 111,
-                                        columnNumber: 40
+                                        lineNumber: 196,
+                                        columnNumber: 23
                                     }, undefined),
                                     type: "beauty"
                                 },
@@ -105043,8 +105130,8 @@ const Header = ()=>{
                                         fontSize: "small"
                                     }, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 112,
-                                        columnNumber: 43
+                                        lineNumber: 201,
+                                        columnNumber: 23
                                     }, undefined),
                                     type: "furniture"
                                 }
@@ -105055,25 +105142,25 @@ const Header = ()=>{
                                             children: item.icon
                                         }, void 0, false, {
                                             fileName: "src/component/Header/index.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 206,
                                             columnNumber: 17
                                         }, undefined),
                                         item.label
                                     ]
                                 }, item.type, true, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 205,
                                     columnNumber: 15
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 107,
+                            lineNumber: 177,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header/index.jsx",
-                    lineNumber: 95,
+                    lineNumber: 156,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
@@ -105095,25 +105182,25 @@ const Header = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 125,
+                                    lineNumber: 216,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.IconButton), {
                                     onClick: handleSearchSubmit,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _iconsMaterial.Search), {}, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 134,
+                                        lineNumber: 225,
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 133,
+                                    lineNumber: 224,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 124,
+                            lineNumber: 215,
                             columnNumber: 11
                         }, undefined),
                         !isUserLoggedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Button), {
@@ -105123,13 +105210,13 @@ const Header = ()=>{
                             children: "Login"
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 139,
+                            lineNumber: 230,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header/index.jsx",
-                    lineNumber: 123,
+                    lineNumber: 214,
                     columnNumber: 9
                 }, undefined),
                 isUserLoggedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
@@ -105147,17 +105234,17 @@ const Header = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 150,
+                                    lineNumber: 248,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/component/Header/index.jsx",
-                                lineNumber: 149,
+                                lineNumber: 247,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 148,
+                            lineNumber: 243,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.IconButton), {
@@ -105172,23 +105259,23 @@ const Header = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 155,
+                                    lineNumber: 256,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/component/Header/index.jsx",
-                                lineNumber: 154,
+                                lineNumber: 255,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 153,
+                            lineNumber: 251,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header/index.jsx",
-                    lineNumber: 147,
+                    lineNumber: 242,
                     columnNumber: 11
                 }, undefined),
                 isUserLoggedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Box), {
@@ -105208,18 +105295,18 @@ const Header = ()=>{
                                             children: (0, _helper.getAvtarName)(userData?.firstName || "U")
                                         }, void 0, false, {
                                             fileName: "src/component/Header/index.jsx",
-                                            lineNumber: 167,
-                                            columnNumber: 17
+                                            lineNumber: 268,
+                                            columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/component/Header/index.jsx",
-                                        lineNumber: 166,
-                                        columnNumber: 15
+                                        lineNumber: 267,
+                                        columnNumber: 17
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 165,
-                                    columnNumber: 13
+                                    lineNumber: 266,
+                                    columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Typography), {
                                     style: {
@@ -105231,13 +105318,13 @@ const Header = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 170,
-                                    columnNumber: 13
+                                    lineNumber: 273,
+                                    columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 164,
+                            lineNumber: 265,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Menu), {
@@ -105250,12 +105337,12 @@ const Header = ()=>{
                                     children: "Profile"
                                 }, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 174,
+                                    lineNumber: 283,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Divider), {}, void 0, false, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 175,
+                                    lineNumber: 284,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.MenuItem), {
@@ -105265,25 +105352,25 @@ const Header = ()=>{
                                                 fontSize: "small"
                                             }, void 0, false, {
                                                 fileName: "src/component/Header/index.jsx",
-                                                lineNumber: 178,
+                                                lineNumber: 287,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/component/Header/index.jsx",
-                                            lineNumber: 177,
+                                            lineNumber: 286,
                                             columnNumber: 17
                                         }, undefined),
                                         "Logout"
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/component/Header/index.jsx",
-                                    lineNumber: 176,
+                                    lineNumber: 285,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 173,
+                            lineNumber: 278,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Button), {
@@ -105292,28 +105379,28 @@ const Header = ()=>{
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "src/component/Header/index.jsx",
-                            lineNumber: 183,
+                            lineNumber: 292,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/component/Header/index.jsx",
-                    lineNumber: 163,
+                    lineNumber: 264,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/component/Header/index.jsx",
-            lineNumber: 87,
+            lineNumber: 108,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/component/Header/index.jsx",
-        lineNumber: 86,
+        lineNumber: 107,
         columnNumber: 5
     }, undefined);
 };
-_s(Header, "JJOttEQpA9Q1HWKEeyivBylDs1A=", false, function() {
+_s(Header, "uSlRp4IawQX9lWE5Y6L63dKNNB4=", false, function() {
     return [
         (0, _reactRouterDom.useNavigate),
         (0, _reactRedux.useSelector),
@@ -105330,7 +105417,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","react-redux":"62sf7","@mui/material":"40376","@mui/icons-material":"16nSq","../../assents/logos/main-logo.png":"5UL9S","../../helper":"3r8hW","./style.css":"8C0y5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"16nSq":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","react-redux":"62sf7","@mui/material":"40376","@mui/icons-material":"16nSq","@mui/icons-material/Menu":"eYtXA","../../assents/logos/main-logo.png":"5UL9S","../../helper":"3r8hW","./style.css":"8C0y5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"16nSq":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Abc", ()=>(0, _abcJsDefault.default));
@@ -137277,7 +137364,43 @@ exports.default = (0, _createSvgIconJsDefault.default)(/*#__PURE__*/ (0, _jsxRun
     d: "M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2M1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2"
 }), 'ShoppingCart');
 
-},{"./utils/createSvgIcon.js":"2ox7L","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5UL9S":[function(require,module,exports,__globalThis) {
+},{"./utils/createSvgIcon.js":"2ox7L","react/jsx-runtime":"6AEwr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eYtXA":[function(require,module,exports,__globalThis) {
+"use strict";
+"use client";
+var _interopRequireDefault = require("1a2787d0d84e43df").default;
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = void 0;
+var _createSvgIcon = _interopRequireDefault(require("b37f83d3ef950822"));
+var _jsxRuntime = require("cebdb6f22315edc5");
+var _default = exports.default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _jsxRuntime.jsx)("path", {
+    d: "M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"
+}), 'Menu');
+
+},{"1a2787d0d84e43df":"7XM86","b37f83d3ef950822":"lVV9C","cebdb6f22315edc5":"6AEwr"}],"7XM86":[function(require,module,exports,__globalThis) {
+function _interopRequireDefault(e) {
+    return e && e.__esModule ? e : {
+        "default": e
+    };
+}
+module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"lVV9C":[function(require,module,exports,__globalThis) {
+"use strict";
+'use client';
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "default", {
+    enumerable: true,
+    get: function() {
+        return _utils.createSvgIcon;
+    }
+});
+var _utils = require("21f2d1dcc9f0020d");
+
+},{"21f2d1dcc9f0020d":"9bp9M"}],"5UL9S":[function(require,module,exports,__globalThis) {
 module.exports = require("e0f3553c94560d49").getBundleURL('UckoE') + "main-logo.bb10d189.png" + "?" + Date.now();
 
 },{"e0f3553c94560d49":"lgJ39"}],"lgJ39":[function(require,module,exports,__globalThis) {
@@ -137527,7 +137650,9 @@ const Footer = ()=>{
                         variant: "body1",
                         className: "menus",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _storefrontDefault.default), {}, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _storefrontDefault.default), {
+                                className: "footer-icon"
+                            }, void 0, false, {
                                 fileName: "src/component/Footer/index.jsx",
                                 lineNumber: 20,
                                 columnNumber: 13
@@ -137543,7 +137668,9 @@ const Footer = ()=>{
                         variant: "body1",
                         className: "menus",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _autoGraphDefault.default), {}, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _autoGraphDefault.default), {
+                                className: "footer-icon"
+                            }, void 0, false, {
                                 fileName: "src/component/Footer/index.jsx",
                                 lineNumber: 24,
                                 columnNumber: 13
@@ -137559,7 +137686,9 @@ const Footer = ()=>{
                         variant: "body1",
                         className: "menus",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _redeemDefault.default), {}, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _redeemDefault.default), {
+                                className: "footer-icon"
+                            }, void 0, false, {
                                 fileName: "src/component/Footer/index.jsx",
                                 lineNumber: 28,
                                 columnNumber: 13
@@ -137575,7 +137704,9 @@ const Footer = ()=>{
                         variant: "body1",
                         className: "menus",
                         children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _helpOutlineDefault.default), {}, void 0, false, {
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _helpOutlineDefault.default), {
+                                className: "footer-icon"
+                            }, void 0, false, {
                                 fileName: "src/component/Footer/index.jsx",
                                 lineNumber: 31,
                                 columnNumber: 13
@@ -137624,29 +137755,7 @@ var _default = exports.default = (0, _createSvgIcon.default)(/*#__PURE__*/ (0, _
     d: "m21.9 8.89-1.05-4.37c-.22-.9-1-1.52-1.91-1.52H5.05c-.9 0-1.69.63-1.9 1.52L2.1 8.89c-.24 1.02-.02 2.06.62 2.88.08.11.19.19.28.29V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6.94c.09-.09.2-.18.28-.28.64-.82.87-1.87.62-2.89m-2.99-3.9 1.05 4.37c.1.42.01.84-.25 1.17-.14.18-.44.47-.94.47-.61 0-1.14-.49-1.21-1.14L16.98 5zM13 5h1.96l.54 4.52c.05.39-.07.78-.33 1.07-.22.26-.54.41-.95.41-.67 0-1.22-.59-1.22-1.31zM8.49 9.52 9.04 5H11v4.69c0 .72-.55 1.31-1.29 1.31-.34 0-.65-.15-.89-.41-.25-.29-.37-.68-.33-1.07m-4.45-.16L5.05 5h1.97l-.58 4.86c-.08.65-.6 1.14-1.21 1.14-.49 0-.8-.29-.93-.47-.27-.32-.36-.75-.26-1.17M5 19v-6.03c.08.01.15.03.23.03.87 0 1.66-.36 2.24-.95.6.6 1.4.95 2.31.95.87 0 1.65-.36 2.23-.93.59.57 1.39.93 2.29.93.84 0 1.64-.35 2.24-.95.58.59 1.37.95 2.24.95.08 0 .15-.02.23-.03V19z"
 }), 'Storefront');
 
-},{"ee1f4cfd351b972d":"7XM86","ee83c9f8560e665":"lVV9C","ba98638e9fc250":"6AEwr"}],"7XM86":[function(require,module,exports,__globalThis) {
-function _interopRequireDefault(e) {
-    return e && e.__esModule ? e : {
-        "default": e
-    };
-}
-module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"lVV9C":[function(require,module,exports,__globalThis) {
-"use strict";
-'use client';
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: function() {
-        return _utils.createSvgIcon;
-    }
-});
-var _utils = require("21f2d1dcc9f0020d");
-
-},{"21f2d1dcc9f0020d":"9bp9M"}],"6s77m":[function(require,module,exports,__globalThis) {
+},{"ee1f4cfd351b972d":"7XM86","ee83c9f8560e665":"lVV9C","ba98638e9fc250":"6AEwr"}],"6s77m":[function(require,module,exports,__globalThis) {
 "use strict";
 "use client";
 var _interopRequireDefault = require("d600cceadaa5b86f").default;
@@ -137794,6 +137903,7 @@ const Suggestions = ({ product, onCategorySelect })=>{
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _typographyDefault.default), {
+                            className: "suggestion-title",
                             variant: "body1",
                             style: {
                                 fontSize: "20px",
@@ -137892,8 +138002,34 @@ const ProductSuggestions = ({ title = "abc", product = [] })=>{
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 1
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 393,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
     const dispatch = (0, _reactRedux.useDispatch)(); // hook to store data in redux store
     const navigate = (0, _reactRouterDom.useNavigate)();
@@ -137931,12 +138067,12 @@ const ProductSuggestions = ({ title = "abc", product = [] })=>{
                         children: title
                     }, void 0, false, {
                         fileName: "src/component/ProductSuggestions/index.jsx",
-                        lineNumber: 59,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/component/ProductSuggestions/index.jsx",
-                    lineNumber: 58,
+                    lineNumber: 84,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _boxDefault.default), {
@@ -137949,7 +138085,7 @@ const ProductSuggestions = ({ title = "abc", product = [] })=>{
                         children: "No Product Available"
                     }, void 0, false, {
                         fileName: "src/component/ProductSuggestions/index.jsx",
-                        lineNumber: 66,
+                        lineNumber: 92,
                         columnNumber: 13
                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactSlickDefault.default), {
                         className: "slider",
@@ -137968,16 +138104,16 @@ const ProductSuggestions = ({ title = "abc", product = [] })=>{
                                                 loading: "lazy"
                                             }, void 0, false, {
                                                 fileName: "src/component/ProductSuggestions/index.jsx",
-                                                lineNumber: 81,
+                                                lineNumber: 107,
                                                 columnNumber: 25
                                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmer.ProductSuggestionsShimmer), {}, void 0, false, {
                                                 fileName: "src/component/ProductSuggestions/index.jsx",
-                                                lineNumber: 88,
+                                                lineNumber: 114,
                                                 columnNumber: 21
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/component/ProductSuggestions/index.jsx",
-                                            lineNumber: 78,
+                                            lineNumber: 104,
                                             columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Typography), {
@@ -137991,34 +138127,34 @@ const ProductSuggestions = ({ title = "abc", product = [] })=>{
                                             children: item?.title || "No title"
                                         }, void 0, false, {
                                             fileName: "src/component/ProductSuggestions/index.jsx",
-                                            lineNumber: 93,
+                                            lineNumber: 119,
                                             columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/component/ProductSuggestions/index.jsx",
-                                    lineNumber: 77,
+                                    lineNumber: 103,
                                     columnNumber: 17
                                 }, undefined)
                             }, index, false, {
                                 fileName: "src/component/ProductSuggestions/index.jsx",
-                                lineNumber: 72,
+                                lineNumber: 98,
                                 columnNumber: 15
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/component/ProductSuggestions/index.jsx",
-                        lineNumber: 70,
+                        lineNumber: 96,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/component/ProductSuggestions/index.jsx",
-                    lineNumber: 64,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/component/ProductSuggestions/index.jsx",
-            lineNumber: 57,
+            lineNumber: 83,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -146190,6 +146326,7 @@ const ProductCartShimmer = ()=>{
                 },
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146203,6 +146340,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146216,6 +146354,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146229,6 +146368,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146242,6 +146382,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146255,6 +146396,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146282,6 +146424,7 @@ const ProductCartShimmer = ()=>{
                 },
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146295,6 +146438,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146308,6 +146452,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146321,6 +146466,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146334,6 +146480,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146347,6 +146494,7 @@ const ProductCartShimmer = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+                        animation: "wave",
                         variant: "rectangular",
                         width: 260,
                         height: 370,
@@ -146381,7 +146529,7 @@ const ProductSuggestionsShimmer = ()=>{
             },
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
                 variant: "rectangular",
-                animation: true,
+                animation: "wave",
                 width: 200,
                 height: 150,
                 style: {
@@ -146443,6 +146591,7 @@ const Banner = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactResponsiveCarousel.Carousel), {
+                className: "carousel-container",
                 autoPlay: true,
                 showThumbs: false,
                 infiniteLoop: true,
@@ -146455,12 +146604,12 @@ const Banner = ()=>{
                             src: (0, _banner2PngDefault.default)
                         }, void 0, false, {
                             fileName: "src/component/Banner/index.jsx",
-                            lineNumber: 29,
+                            lineNumber: 30,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Banner/index.jsx",
-                        lineNumber: 28,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -146469,12 +146618,12 @@ const Banner = ()=>{
                             src: (0, _banner1PngDefault.default)
                         }, void 0, false, {
                             fileName: "src/component/Banner/index.jsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Banner/index.jsx",
-                        lineNumber: 31,
+                        lineNumber: 32,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -146483,12 +146632,12 @@ const Banner = ()=>{
                             src: (0, _banner4PngDefault.default)
                         }, void 0, false, {
                             fileName: "src/component/Banner/index.jsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Banner/index.jsx",
-                        lineNumber: 34,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -146497,12 +146646,12 @@ const Banner = ()=>{
                             src: (0, _banner5PngDefault.default)
                         }, void 0, false, {
                             fileName: "src/component/Banner/index.jsx",
-                            lineNumber: 38,
+                            lineNumber: 39,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Banner/index.jsx",
-                        lineNumber: 37,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -146511,12 +146660,12 @@ const Banner = ()=>{
                             src: (0, _banner3PngDefault.default)
                         }, void 0, false, {
                             fileName: "src/component/Banner/index.jsx",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 13
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/component/Banner/index.jsx",
-                        lineNumber: 40,
+                        lineNumber: 41,
                         columnNumber: 11
                     }, undefined)
                 ]
