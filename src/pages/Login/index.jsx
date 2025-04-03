@@ -203,10 +203,7 @@ const Login = () => {
                 </Box>
                 <Typography sx={{ textAlign: "center", color: "white" }}>
                   Don't have a account?{" "}
-                  <span
-                    style={{ cursor: "pointer" }}
-                    onClick={() => navigate("/signup")}
-                  >
+                  <span>
                     <strong>Register</strong>
                   </span>{" "}
                 </Typography>

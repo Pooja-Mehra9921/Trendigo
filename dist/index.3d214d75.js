@@ -151593,15 +151593,11 @@ const Login = ()=>{
                                                 "Don't have a account?",
                                                 " ",
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                                    style: {
-                                                        cursor: "pointer"
-                                                    },
-                                                    onClick: ()=>navigate("/signup"),
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
                                                         children: "Register"
                                                     }, void 0, false, {
                                                         fileName: "src/pages/Login/index.jsx",
-                                                        lineNumber: 210,
+                                                        lineNumber: 207,
                                                         columnNumber: 21
                                                     }, undefined)
                                                 }, void 0, false, {
