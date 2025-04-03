@@ -112,6 +112,7 @@ transition: 0.5s;
 .login-btn{
 background-color: white !important;
 font-size: 14px;
+color: #0e1d55;
 }
 .header-cart-item-container{
   display: flex;
@@ -132,23 +133,69 @@ font-size: 14px;
   align-items: center;
   justify-content: center;
 }
+.menu-icon-container{
+  display: none;
+}
 
-  @media (max-width: 768px) {
-    .header-container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
+@media screen and (max-width: 393px){
+
+  .menu-container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .quick-search-button{
+    display: none !important;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid grey;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+margin: 0;
+width: 100%;
+  }
     .search-container {
       width: 100%;
-    }
-  
-    .menu-container {
-      flex-wrap: wrap;
-    }
-  
-    .add-to-cart {
-      margin-top: 10px;
-    }
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 410px;
+      margin-left: -16px;
+      margin-right: -10px;
+      margin-bottom: 10px;
   }
+
+  .menu-icon-container{
+    display: block;
+  }
+  
+.trendigo-logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+  width: 100%;
+}
+.header-main-container {
+  background-color: #0e1d55;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+}
+
+  
+.menu-container {
+  display: none;
+
+}
+}
   

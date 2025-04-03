@@ -27,8 +27,34 @@ const ProductSuggestions = ({ title = "abc", product = [] }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 393,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const dispatch = useDispatch(); // hook to store data in redux store
@@ -67,7 +93,7 @@ setLoading(true);
               No Product Available
             </Typography>
           ) : 
-            <Slider {...settings}>
+            <Slider className="slider" {...settings}>
             {product.map((item, index) => (
               <Box
                 key={index}

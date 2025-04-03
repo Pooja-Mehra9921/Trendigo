@@ -1,6 +1,6 @@
 import React from "react";
 import InnerImageZoom from "react-inner-image-zoom";
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 
 // import Hooks
 import { useDispatch, useSelector } from "react-redux";
@@ -36,8 +36,7 @@ const SingleProductDetail = () => {
   console.log("product machhhh", isProductMatched);
   const [isAdded, setisAdded] = useState(isProductMatched.length > 0);
   const [imageToMagnify, setImageToMagnify] = useState(
-    dataFromStore?.thumbnail
-  );
+    dataFromStore?.thumbnail);
   const userData = JSON.parse(localStorage.getItem("userdata"));
   const isUserLoggedIn = Boolean(userData?.refreshToken);
 
@@ -102,10 +101,12 @@ const SingleProductDetail = () => {
           </Box>
           <Box className="image-magnify-sec">
             <Box className="magnify-image">
-            <InnerImageZoom
-    src={dataFromStore?.thumbnail}
-    zoomSrc="https://via.placeholder.com/1000"
-  />
+            <InnerImageZoom 
+        src={imageToMagnify} 
+        zoomSrc="https://via.placeholder.com/1200"
+        zoomType="hover"
+        zoomScale={1.5}
+      />
             </Box>
             <Box className="btn-container">
               <Button

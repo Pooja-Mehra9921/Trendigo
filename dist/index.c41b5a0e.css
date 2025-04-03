@@ -906,6 +906,7 @@
 }
 
 .login-btn {
+  color: #0e1d55;
   height: 40px;
   font-size: 14px;
   color: #fff !important;
@@ -932,22 +933,64 @@
   display: flex;
 }
 
-@media (width <= 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+.menu-icon-container {
+  display: none;
+}
+
+@media screen and (width <= 393px) {
+  .menu-container {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    display: flex;
+  }
+
+  .quick-search-button {
+    display: none !important;
+  }
+
+  .search-bar {
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 5px;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 5px 10px;
+    display: flex;
   }
 
   .search-container {
+    width: 410px;
+    margin: 0 -10px 10px -16px;
+    padding: 0;
+    display: flex;
+  }
+
+  .menu-icon-container {
+    display: block;
+  }
+
+  .trendigo-logo-container {
+    align-items: center;
     width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+  }
+
+  .header-main-container {
+    background-color: #0e1d55;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
   }
 
   .menu-container {
-    flex-wrap: wrap;
-  }
-
-  .add-to-cart {
-    margin-top: 10px;
+    display: none;
   }
 }
 
@@ -977,12 +1020,37 @@
   font-size: 14px !important;
 }
 
+@media screen and (width <= 393px) {
+  .menus {
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto 10px !important;
+    font-size: 16px !important;
+  }
+
+  .footer-icon {
+    margin-right: 5px;
+    font-size: 22px !important;
+  }
+
+  .footer-container {
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+  }
+}
+
 .suggestion-main-container {
   margin: 40px 20px;
   padding: 15px;
 }
 
 .suggestion-container {
+  flex-flow: wrap;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -1005,6 +1073,43 @@
 .suggestion-images:hover {
   transition: .1;
   transform: scale(1.2);
+}
+
+@media screen and (width <= 393px) {
+  .suggestion-main-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .suggestion-container {
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+
+  .suggestion-card {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    margin: 10px 5px;
+  }
+
+  .suggestion-images {
+    border: 2px solid #c1c1c1;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+
+  .suggestion-images:hover {
+    transition: none;
+    transform: none;
+  }
+
+  .suggestion-title {
+    font-size: 12px !important;
+  }
 }
 
 .slick-slider {
@@ -1296,6 +1401,27 @@
   text-align: center;
 }
 
+@media (width <= 1920px) {
+  .slider {
+    width: 100%;
+  }
+
+  .Product-suggestion-card {
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 4px;
+    display: flex;
+    width: 190px !important;
+  }
+
+  .Product-suggestion-images {
+    max-width: 160px;
+    max-height: 160px;
+  }
+}
+
 .carousel .control-arrow, .carousel.carousel-slider .control-arrow {
   -o-transition: all .25s ease-in;
   opacity: .4;
@@ -1572,6 +1698,16 @@
 
 .banner-image {
   height: 800px;
+}
+
+@media screen and (width <= 393px) {
+  .banner-image {
+    height: 170px;
+  }
+
+  .carousel-container {
+    margin: 10px;
+  }
 }
 
 .login-body {
@@ -1981,7 +2117,7 @@
   appearance: none;
   background: #fffc;
   border: none;
-  outline: none;
+  outline: 0;
   justify-content: center;
   align-items: center;
   width: 40px;

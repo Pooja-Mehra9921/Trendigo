@@ -36,5 +36,29 @@
 
 .suggestion-title{
     text-align: center;
+   
 
+}
+
+
+@media (max-width:1920px){
+    .slider{
+        width: 100%;
+    }
+    .Product-suggestion-card{
+        height: 200px;
+        width: 190px !important; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        border-radius: 10px;
+       
+    }
+
+    .Product-suggestion-images{
+        max-height: 160px;
+        max-width:  160px;
+    }
+   
 }

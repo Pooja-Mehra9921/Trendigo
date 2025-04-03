@@ -19,6 +19,7 @@ const Banner = () => {
     <>
     <div>
         <Carousel
+        className="carousel-container"
           autoPlay={true}
           showThumbs={false}
           infiniteLoop={true}

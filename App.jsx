@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import HomePage from "./src/pages/Home";
 import LoginPage from "./src/pages/Login";
@@ -13,7 +13,7 @@ import ProtectedRoute from "./src/component/ProtectedRoute";
 const App = () => {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Routes>
         
           <Route exact path="/" element={<HomePage />} />
@@ -30,7 +30,7 @@ const App = () => {
             <Route path="/wishlist" element={<WishListPage />} />
           </Route>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </>
   );
 };

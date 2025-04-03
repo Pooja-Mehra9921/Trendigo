@@ -46,7 +46,7 @@ const Suggestions = ({ product, onCategorySelect }) => {
             <Box className="image-container">
               <img className="suggestion-images" src={ele.img} alt={ele.title} />
             </Box>
-            <Typography variant="body1" style={{ fontSize: "20px", textAlign: "center", marginTop: "10px" }}>
+            <Typography className="suggestion-title" variant="body1" style={{ fontSize: "20px", textAlign: "center", marginTop: "10px" }}>
               {ele.title}
             </Typography>
           </Box>

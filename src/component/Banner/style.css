@@ -1,3 +1,14 @@
 .banner-image{
    height: 800px;
 }
+
+@media screen and (max-width: 393px) {
+   .banner-image{
+      height: 170px;
+   }
+
+   .carousel-container{
+      margin: 10px;
+   }
+}
+   
