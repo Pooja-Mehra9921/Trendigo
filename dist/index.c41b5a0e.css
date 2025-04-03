@@ -906,10 +906,9 @@
 }
 
 .login-btn {
-  color: #0e1d55;
   height: 40px;
   font-size: 14px;
-  color: #fff !important;
+  color: #0e1d55 !important;
   background-color: #fff !important;
   border-color: #fff !important;
 }
@@ -2049,6 +2048,80 @@
   height: 350px;
 }
 
+.user-name {
+  align-items: center;
+  display: flex;
+}
+
+.review-name-section {
+  margin: auto 10px;
+}
+
+.review-paper {
+  background-color: gray;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.pro-detail-container {
+  margin: 1% 10%;
+  display: flex;
+}
+
+.pro-image-section {
+  width: 500px;
+  display: flex;
+}
+
+.image-suggestions {
+  flex-wrap: wrap;
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.img-suggestion {
+  border: 1px solid gray;
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.magnify-image {
+  border: 1px solid gray;
+}
+
+.pro-detail-section {
+  padding: 10px 20px;
+}
+
+.selected-price {
+  font-size: 30px !important;
+  font-weight: 400 !important;
+}
+
+.selected-orignal-price {
+  color: gray;
+  text-decoration: line-through;
+  margin: auto 10px !important;
+}
+
+.selected-discount-price {
+  color: #388e3c;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.price-container {
+  justify-content: start;
+  align-items: center;
+  display: flex;
+}
+
+.review-rating-section {
+  border: 1px solid #ddd;
+  margin: 20px auto;
+  padding: 10px;
+}
+
 .iiz {
   max-width: 100%;
   cursor: -webkit-zoom-in;
@@ -2168,80 +2241,6 @@
   width: 29px;
   height: 29px;
   transform: rotate(45deg);
-}
-
-.user-name {
-  align-items: center;
-  display: flex;
-}
-
-.review-name-section {
-  margin: auto 10px;
-}
-
-.review-paper {
-  background-color: gray;
-  margin: 10px auto;
-  padding: 10px;
-}
-
-.pro-detail-container {
-  margin: 1% 10%;
-  display: flex;
-}
-
-.pro-image-section {
-  width: 500px;
-  display: flex;
-}
-
-.image-suggestions {
-  flex-wrap: wrap;
-  width: 300px !important;
-  height: 300px !important;
-}
-
-.img-suggestion {
-  border: 1px solid gray;
-  width: 100px !important;
-  height: 100px !important;
-}
-
-.magnify-image {
-  border: 1px solid gray;
-}
-
-.pro-detail-section {
-  padding: 10px 20px;
-}
-
-.selected-price {
-  font-size: 30px !important;
-  font-weight: 400 !important;
-}
-
-.selected-orignal-price {
-  color: gray;
-  text-decoration: line-through;
-  margin: auto 10px !important;
-}
-
-.selected-discount-price {
-  color: #388e3c;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-}
-
-.price-container {
-  justify-content: start;
-  align-items: center;
-  display: flex;
-}
-
-.review-rating-section {
-  border: 1px solid #ddd;
-  margin: 20px auto;
-  padding: 10px;
 }
 
 .abt-main {

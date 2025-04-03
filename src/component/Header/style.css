@@ -112,7 +112,7 @@ transition: 0.5s;
 .login-btn{
 background-color: white !important;
 font-size: 14px;
-color: #0e1d55;
+color: #0e1d55 !important;
 }
 .header-cart-item-container{
   display: flex;
